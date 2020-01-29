@@ -46,7 +46,7 @@ liboqs-dotnet is provided "as is", without warranty of any kind.  See [LICENSE.t
 Building
 --------
 
-Builds are tested using the Appveyor continuous integration system on Windows Server 2016 (Visual Studio 2017).  Builds have been tested manually on Windows 10 with Visual Studio 2017 (Community and Enterprise editions).
+Builds are tested using the Appveyor continuous integration system on Windows Server 2016 (Visual Studio 2017).  Builds have been tested manually on Windows 10 with Visual Studio 2017 (Community and Enterprise editions) and macOS Mojave.
 
 ### Step 0: Prerequisites
 
@@ -75,13 +75,15 @@ See the [liboqs REAMDE.md](https://github.com/open-quantum-safe/liboqs#building-
 
 The dotnetOQS solution can be built using Visual Studio or on the command line:
 
-	msbuild dotnetOQS.sln /p:Configuration=Release
+	dotnet publish dotnetOQS.sln /p:Platform=x64 -c Release -f netcoreapp1.1 -o bin/netcore-osx-x64/netcoreapp1.1 -r osx-x64
+	dotnet publish dotnetOQS.sln /p:Platform=x64 -c Release -f netcoreapp2.1 -o bin/netcore-osx-x64/netcoreapp2.1 -r osx-x64 --self-contained
+	dotnet publish dotnetOQS.sln /p:Platform=x64 -c Release -f netcoreapp3.1 -o bin/netcore-osx-x64/netcoreapp3.1 -r osx-x64 --self-contained
 
 ### Running the sample and test programs
 
 The sample program can be ran using Visual Studio or on the command line:
 
-	dotnet dotnetOQSSample\bin\Release\netcoreapp1.1\dotnetOQSSample.dll
+	dotnet test dotnetOQS.sln
 
 The unit tests can be running using Visual Studio's "Test" menu.
 
