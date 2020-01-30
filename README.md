@@ -50,11 +50,16 @@ Builds are tested using the Appveyor continuous integration system on Windows Se
 
 ### Step 0: Prerequisites
 
+#### C liboqs wrapper
+Refer to [liboqs](https://github.com/open-quantum-safe/liboqs#quickstart) quickstart section for the dependencies you may need to compile a dynamic library.
+
+#### .NET liboqs wrapper
 To build the .NET OQS wrapper you need a .NET development environment; see the Getting Started section on the [.NET Core](https://dotnet.github.io/) GitHub page for more information.
 
-The wrapper targets version 1.2 and 2.0 of the .NET Standard, which can be obtained [here](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+The wrapper targets version 1.2 and 2.0 of the .NET standard framework which supports a wide range of framework [here](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support).
 
-Installing .Net Core 2.1 SDK and above is recommended for the installation steps below.
+Installing .Net Core 2.1 SDK and above is recommended for the installation steps below which can be obtained [here](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+(Depending on the target version you are trying to build, you may require a higher version of the SDK)
 
 ### Step 1: Build liboqs
 
